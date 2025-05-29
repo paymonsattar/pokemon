@@ -1,7 +1,7 @@
 import React from 'react';
-import { PokemonForm } from './components/PokemonForm';
-import { SuccessMessage } from './components/SuccessMessage';
-import { usePokemon } from './hooks/usePokemon';
+import { PokemonForm } from './components/PokemonForm.tsx';
+import { SuccessMessage } from './components/SuccessMessage.tsx';
+import { usePokemon } from './hooks/usePokemon.ts';
 import './styles/globals.css';
 
 function App() {
@@ -63,7 +63,7 @@ function App() {
             <span className="animate-bounce" style={{ animationDelay: '0.4s' }}>🟢</span>
           </div>
           <p className="text-white/70 font-medium">
-            Made with ❤️ for Pokémon Trainers everywhere
+            Made with ❤️ by Andy and Paymon
           </p>
           <p className="text-white/50 text-sm mt-2">
             © 2025 Pokémon Central - Become the very best, like no one ever was!

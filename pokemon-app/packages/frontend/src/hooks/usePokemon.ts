@@ -27,7 +27,7 @@ export const usePokemon = () => {
     setError(null);
 
     try {
-      const apiUrl = process.env.REACT_APP_API_URL;
+      const apiUrl = "https://50ezyz5vs7.execute-api.eu-west-1.amazonaws.com";
       if (!apiUrl) {
         throw new Error('API URL not configured');
       }

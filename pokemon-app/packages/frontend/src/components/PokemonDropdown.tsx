@@ -1,5 +1,5 @@
 import React from 'react';
-import { ORIGINAL_150_POKEMON } from '../data/pokemon';
+import { ORIGINAL_150_POKEMON } from '../data/pokemon.ts';
 
 interface PokemonDropdownProps {
   value: string;

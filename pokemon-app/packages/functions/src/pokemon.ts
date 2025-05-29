@@ -1,4 +1,4 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
+import { APIGatewayProxyEventV2, APIGatewayProxyResultV2 } from "aws-lambda";
 import { pokemonDB } from "./lib/db.js";
 import { pokemonSubmissionSchema } from "../../shared/src/schemas/pokemon.js";
 import { randomUUID } from "crypto";
@@ -10,12 +10,16 @@ const corsHeaders = {
 };
 
 export const handler = async (
-  event: APIGatewayProxyEvent
-): Promise<APIGatewayProxyResult> => {
+  event: APIGatewayProxyEventV2
+): Promise<APIGatewayProxyResultV2> => {
   console.log("Event:", JSON.stringify(event, null, 2));
 
+  // Get HTTP method from the correct location
+  const httpMethod = event.requestContext.http.method;
+  console.log("HTTP Method:", httpMethod);
+
   // Handle CORS preflight
-  if (event.httpMethod === "OPTIONS") {
+  if (httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
       headers: corsHeaders,
@@ -24,7 +28,7 @@ export const handler = async (
   }
 
   // Only allow POST requests
-  if (event.httpMethod !== "POST") {
+  if (httpMethod !== "POST") {
     return {
       statusCode: 405,
       headers: corsHeaders,

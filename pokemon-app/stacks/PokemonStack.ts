@@ -32,14 +32,14 @@ export function PokemonStack({ stack }: StackContext) {
   });
 
   // Create frontend site
-  const site = new StaticSite(stack, "PokemonSite", {
-    path: "packages/frontend",
-    buildOutput: "build",
-    buildCommand: "npm run build",
-    environment: {
-      REACT_APP_API_URL: api.url,
-    },
-  });
+const site = new StaticSite(stack, "PokemonSite", {
+  path: "packages/frontend",
+  buildOutput: "build",
+  buildCommand: "npm ci && npm run build",
+  environment: {
+    REACT_APP_API_URL: api.url,
+  },
+});
 
   stack.addOutputs({
     ApiEndpoint: api.url,

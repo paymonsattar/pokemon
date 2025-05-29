@@ -14,7 +14,7 @@
   "devDependencies": {
     "@tsconfig/node18": "^18.2.4",
     "@types/aws-lambda": "^8.10.149",
-    "aws-cdk-lib": "2.142.1",
+    "aws-cdk-lib": "2.132.1",
     "constructs": "10.3.0",
     "typescript": "^5.8.3"
   },
@@ -24,7 +24,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.817.0",
     "@aws-sdk/lib-dynamodb": "^3.817.0",
-    "sst": "^2.43.7",
+    "sst": "2.43.7",
     "zod": "^3.25.36"
   }
 }

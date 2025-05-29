@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PokemonDropdown } from './PokemonDropdown';
+import { PokemonDropdown } from './PokemonDropdown.tsx';
 
 interface FormData {
   firstName: string;
@@ -48,7 +48,7 @@ export const PokemonForm: React.FC<PokemonFormProps> = ({
       case 'lastName':
         if (!value.trim()) return `${name === 'firstName' ? 'First' : 'Last'} name is required`;
         if (value.length > 30) return `${name === 'firstName' ? 'First' : 'Last'} name must be no more than 30 characters`;
-        if (!/^[A-Za-z\s\-]+$/.test(value)) return `${name === 'firstName' ? 'First' : 'Last'} name can only contain letters, spaces, and hyphens`;
+        if (!/^[A-Za-z\s-]+$/.test(value)) return `${name === 'firstName' ? 'First' : 'Last'} name can only contain letters, spaces, and hyphens`;
         return undefined;
 
       case 'email':
