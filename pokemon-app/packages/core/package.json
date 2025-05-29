@@ -1,0 +1,17 @@
+{
+  "name": "@pokemon-app/core",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "sst bind vitest",
+    "typecheck": "tsc -noEmit"
+  },
+  "devDependencies": {
+    "vitest": "^3.1.4",
+    "@types/node": "^22.15.24",
+    "sst": "^3.16.5"
+  },
+  "dependencies": {
+    "zod": "^3.25.36"
+  }
+}

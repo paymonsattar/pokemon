@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --pokemon-yellow: #FFDE00;
+  --pokemon-blue: #3B82C6;
+  --pokemon-red: #E53E3E;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.pokemon-title {
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.pokemon-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 3px solid var(--pokemon-yellow);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.pokemon-button {
+  background: linear-gradient(45deg, var(--pokemon-yellow), #FFE55C);
+  border: 2px solid #E6C200;
+  color: #2D3748;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.pokemon-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 222, 0, 0.4);
+}
+
+.pokeball-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f0f0f0' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='15'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.form-floating-label {
+  transform: translateY(-50%) scale(0.75);
+  transform-origin: left top;
+  color: #6B7280;
+}
+
+/* Custom animations */
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s ease-out;
+}
+
+@keyframes wiggle {
+  0%, 7% { transform: rotateZ(0); }
+  15% { transform: rotateZ(-15deg); }
+  20% { transform: rotateZ(10deg); }
+  25% { transform: rotateZ(-10deg); }
+  30% { transform: rotateZ(6deg); }
+  35% { transform: rotateZ(-4deg); }
+  40%, 100% { transform: rotateZ(0); }
+}
+
+.animate-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
